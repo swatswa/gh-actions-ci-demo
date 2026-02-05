@@ -4,14 +4,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  test:
+    runs-on: [self-hosted, Windows, X64]
 
-      - name: Verify runner
-        run: |
-          echo "Running on self-hosted runner"
-          hostname
-          whoami
+    steps:
+      - name: Say Hello
+        run: echo "Hello from self-hosted runner"
+
+      - name: Show OS
+        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+
+      - name: Finish
+        run: echo "Success 🎉"
