@@ -1,7 +1,9 @@
+
 - name: Say Hello
   shell: pwsh
   run: |
-    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    # Allow PowerShell scripts to run temporarily
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
     Write-Output "Hello from self-hosted runner"
-    # If you want to run your script file, add this line:
-    # ./_work/temp/b6bbbc1a-1cc1-4a79-9567-dr09d61abc08.ps1
+    # If you have a PowerShell script file, run it like this:
+    # ./_work/temp/3100-leal-ebe5-4ole-6744-67ba9cfc90eb.ps1
