@@ -1,17 +1,7 @@
-name : Demo GitHub Actions Workflow
-on:
-  push: 
-    branches: 
-        - main
-
-        jobs:
-          demo-job:
-            runs-on: ubuntu-latest
-
-            steps:
-              - name: checkout repository
-                uses: actions/checkout@v4
-
-              - name: Run a simple command
-                run: echo "GitHub Actions workflow executed successfully!"
-                  
+- name: Say Hello
+  shell: pwsh
+  run: |
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    Write-Output "Hello from self-hosted runner"
+    # If you want to run your script file, add this line:
+    # ./_work/temp/b6bbbc1a-1cc1-4a79-9567-dr09d61abc08.ps1
