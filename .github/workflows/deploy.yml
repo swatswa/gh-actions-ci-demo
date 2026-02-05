@@ -11,8 +11,8 @@ jobs:
       - name: Say Hello
         run: echo "Hello from self-hosted runner"
 
-      - name: Show OS
-        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+      - name: Show OS details
+        run: systeminfo
 
       - name: Finish
-        run: echo "Success 🎉"
+        run: echo "Workflow completed successfully"
