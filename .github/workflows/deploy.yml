@@ -1,18 +1,7 @@
-name: Self-hosted runner test
-
-on:
-  workflow_dispatch:
-
-jobs:
-  test:
-    runs-on: [self-hosted, Windows, X64]
-
-    steps:
-      - name: Say Hello
-        run: echo "Hello from self-hosted runner"
-
-      - name: Show OS details
-        run: systeminfo
-
-      - name: Finish
-        run: echo "Workflow completed successfully"
+- name: Say Hello
+  shell: pwsh
+  run: |
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    Write-Output "Hello from self-hosted runner"
+    # If you want to run your script file, add this line:
+    # ./_work/temp/b6bbbc1a-1cc1-4a79-9567-dr09d61abc08.ps1
